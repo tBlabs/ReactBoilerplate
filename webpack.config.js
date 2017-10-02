@@ -1,8 +1,15 @@
 const path = require('path');
 
-module.exports = {
-  entry: './src/index.ts',
-  module: {
+module.exports = 
+{
+  entry: './src/index.tsx',
+  output: 
+  {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: 
+  {
     rules: [
       {
         test: /\.tsx?$/,
@@ -11,11 +18,13 @@ module.exports = {
       }
     ]
   },
-  resolve: {
+  resolve: 
+  {
     extensions: [ ".tsx", ".ts", ".js" ]
   },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+  externals: 
+  {
+        "react": "React",
+        "react-dom": "ReactDOM"
   }
 };

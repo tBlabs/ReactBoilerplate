@@ -60,20 +60,14 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var ClassB_1 = __webpack_require__(1);
-var classB = new ClassB_1.ClassB("b");
-console.log('cb: ' + classB);
-
+module.exports = React;
 
 /***/ }),
 /* 1 */
@@ -82,17 +76,76 @@ console.log('cb: ' + classB);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ClassB = /** @class */ (function () {
-    function ClassB(foo) {
+var React = __webpack_require__(0);
+var ReactDOM = __webpack_require__(2);
+var FooComponent_1 = __webpack_require__(3);
+var FooClass_1 = __webpack_require__(4);
+console.log('Start');
+var foo = new FooClass_1.Foo("bar");
+console.log(foo.toString());
+ReactDOM.render(React.createElement(FooComponent_1.default, { foo: "foo from props" }), document.getElementById('root'));
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = ReactDOM;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var FooComponent = /** @class */ (function (_super) {
+    __extends(FooComponent, _super);
+    function FooComponent(props) {
+        return _super.call(this, props) || this;
+    }
+    FooComponent.prototype.render = function () {
+        return (React.createElement("div", null,
+            "props.foo: ",
+            this.props.foo,
+            React.createElement("br", null),
+            "props.bar: ",
+            this.props.bar));
+    };
+    return FooComponent;
+}(React.Component));
+exports.default = FooComponent;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Foo = /** @class */ (function () {
+    function Foo(foo) {
         this._foo = "";
         this._foo = foo;
     }
-    ClassB.prototype.toString = function () {
-        return "This is class B!";
+    Foo.prototype.toString = function () {
+        return "This is class Foo!";
     };
-    return ClassB;
+    return Foo;
 }());
-exports.ClassB = ClassB;
+exports.Foo = Foo;
 
 
 /***/ })

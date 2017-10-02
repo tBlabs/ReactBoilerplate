@@ -1,4 +1,4 @@
-export class ClassB
+export class Foo
 {
     private _foo: string = "";
 
@@ -9,6 +9,6 @@ export class ClassB
 
     toString()
     {
-        return "This is class B!";
+        return "This is class Foo!";
     }
 }
