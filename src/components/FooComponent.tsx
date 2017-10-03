@@ -7,7 +7,7 @@ interface IFooComponentProps
     bar?: number;
 }
 
-class IFooComponentState
+interface IFooComponentState
 {
     foo: boolean;
 }
@@ -15,7 +15,7 @@ class IFooComponentState
 
 export default class FooComponent extends React.Component<IFooComponentProps, IFooComponentState>
 {
-    constructor(props: any)
+    constructor(props: IFooComponentProps)
     {
         super(props);
 
@@ -24,12 +24,27 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
         this.Button2ClickHandler = this.Button2ClickHandler.bind(this);
     }
 
-    Button2ClickHandler()
+    private Button2ClickHandler(event): void // TODO: add type; Event, MouseEvent, React.MouseEvent<HTMLButtonElement> - NOTHING OF THIS SEEMS TO WORK!!!!
     {
+        console.log("Button2ClickHandler event: ", event);
+
+        let e: MouseEvent = event as MouseEvent;
+
+        if (e)
+        {
+            console.log("as MouseEvent: ", e);       
+        }
+
         this.setState({ foo: !this.state.foo });
     }
 
-    render()
+    HandleInputChange(event) // TODO: add type
+    {
+        console.log(event);
+        console.log(event.target.value);
+    }
+
+    render(): React.ReactElement<{}>
     {
         return (
             <div>
@@ -42,6 +57,8 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
                 <button onClick={ ()=> this.setState({ foo: !this.state.foo }) }>Toggle state.foo</button>
                 <br />
                 <button onClick={ this.Button2ClickHandler }>Toggle state.foo</button>
+                <br /> 
+                <input onChange={ this.HandleInputChange } />
             </div>
         );
     }

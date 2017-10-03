@@ -110,11 +110,6 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
-var IFooComponentState = /** @class */ (function () {
-    function IFooComponentState() {
-    }
-    return IFooComponentState;
-}());
 var FooComponent = /** @class */ (function (_super) {
     __extends(FooComponent, _super);
     function FooComponent(props) {
@@ -123,8 +118,17 @@ var FooComponent = /** @class */ (function (_super) {
         _this.Button2ClickHandler = _this.Button2ClickHandler.bind(_this);
         return _this;
     }
-    FooComponent.prototype.Button2ClickHandler = function () {
+    FooComponent.prototype.Button2ClickHandler = function (event) {
+        console.log("Button2ClickHandler event: ", event);
+        var e = event;
+        if (e) {
+            console.log("as MouseEvent: ", e);
+        }
         this.setState({ foo: !this.state.foo });
+    };
+    FooComponent.prototype.HandleInputChange = function (event) {
+        console.log(event);
+        console.log(event.target.value);
     };
     FooComponent.prototype.render = function () {
         var _this = this;
@@ -140,7 +144,9 @@ var FooComponent = /** @class */ (function (_super) {
             React.createElement("br", null),
             React.createElement("button", { onClick: function () { return _this.setState({ foo: !_this.state.foo }); } }, "Toggle state.foo"),
             React.createElement("br", null),
-            React.createElement("button", { onClick: this.Button2ClickHandler }, "Toggle state.foo")));
+            React.createElement("button", { onClick: this.Button2ClickHandler }, "Toggle state.foo"),
+            React.createElement("br", null),
+            React.createElement("input", { onChange: this.HandleInputChange })));
     };
     return FooComponent;
 }(React.Component));
