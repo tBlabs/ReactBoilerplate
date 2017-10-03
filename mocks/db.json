@@ -1,0 +1,7 @@
+{
+    "todos":
+    [
+        { "id": 1, "task": "buy cow" },
+        { "id": 2, "task": "fetch milk" }
+    ]
+}

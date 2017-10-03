@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack"
+    "start": "webpack",
+    "mockserver": "json-server --watch mocks/db.json --port 4444 --delay 200"
   },
   "keywords": [],
   "author": "tB",
@@ -13,11 +13,13 @@
   "devDependencies": {
     "@types/react": "^16.0.7",
     "@types/react-dom": "^15.5.5",
+    "json-server": "^0.12.0",
     "ts-loader": "^2.3.7",
     "typescript": "^2.5.3",
     "webpack": "^3.6.0"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "inversify": "^4.3.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
