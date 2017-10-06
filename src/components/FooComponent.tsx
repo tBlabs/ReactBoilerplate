@@ -1,5 +1,5 @@
-import * as React from "react"
-import * as ReactDOM from "react-dom"
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
 interface IFooComponentProps
 {
@@ -24,7 +24,7 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
         this.Button2ClickHandler = this.Button2ClickHandler.bind(this);
     }
 
-    private Button2ClickHandler(event): void // TODO: add type; Event, MouseEvent, React.MouseEvent<HTMLButtonElement> - NOTHING OF THIS SEEMS TO WORK!!!!
+    private Button2ClickHandler(event /*: React.MouseEvent<HtmlButtonElement>*/): void // TODO: add type; Event, MouseEvent, React.MouseEvent<HTMLButtonElement> - NOTHING OF THIS SEEMS TO WORK!!!!
     {
         console.log("Button2ClickHandler event: ", event);
 

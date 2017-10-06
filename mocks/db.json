@@ -1,7 +1,15 @@
 {
-    "todos":
-    [
-        { "id": 1, "task": "buy cow" },
-        { "id": 2, "task": "fetch milk" }
-    ]
+  "test": {
+    "text": "initialkfddd"
+  },
+  "todos": [
+    {
+      "id": 1,
+      "task": "buy cow"
+    },
+    {
+      "id": 2,
+      "task": "fetch milk"
+    }
+  ]
 }

@@ -1,19 +1,25 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import axios, { AxiosResponse } from "axios";
-import FooComponent from './components/FooComponent';
-import { Foo } from "./FooClass";
+import FooComponent from 'components/FooComponent';
+import { Foo } from "FooClass";
+import MobXTestComponent from "components/MobXTestComponent";
+import { useStrict } from "mobx";
 
+useStrict(true);
 
 console.log('Start');
 
-let foo = new Foo("bar");
+// let foo = new Foo("bar");
 
-axios.get('http://www.localhost:4444/todos/2').then((x: AxiosResponse)=>console.log(x.data));
 
-console.log(foo.toString());
-    
+// console.log(foo.toString());
+    // <FooComponent foo="foo from props" />
+
 ReactDOM.render(
-    <FooComponent foo="foo from props" />,
+    <div>
+    <MobXTestComponent />
+    <MobXTestComponent />
+    </div>,
     document.getElementById('root')
 );

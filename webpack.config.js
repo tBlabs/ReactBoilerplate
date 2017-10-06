@@ -20,11 +20,16 @@ module.exports =
   },
   resolve: 
   {
-    extensions: [ ".tsx", ".ts", ".js" ]
+    extensions: [ ".tsx", ".ts", ".js" ],
+    modules: [
+      path.resolve(__dirname, './node_modules'),
+      path.resolve(__dirname, './src'),
+      path.resolve(__dirname, './src/components')
+    ]
   },
   externals: 
   {
-        "react": "React",
-        "react-dom": "ReactDOM"
+      "react": "React",
+      "react-dom": "ReactDOM"
   }
 };
