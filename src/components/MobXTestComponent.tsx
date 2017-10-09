@@ -3,8 +3,9 @@ import * as ReactDOM from "react-dom";
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import { LazyInject } from "IoC";
-import { TestStore, ITestStore } from "TestStore";
+import { TestStore } from "TestStore";
 import { TYPES } from "TYPES";
+import { ITestStore } from "ITestStore";
 
 @observer
 export default class MobXTestComponent extends React.Component<any, any>
@@ -33,8 +34,6 @@ export default class MobXTestComponent extends React.Component<any, any>
         console.log("Button clicked!");
 
         this.testStore.text = "newww";
-
-
     }
 
     render(): React.ReactElement<{}>
@@ -45,7 +44,6 @@ export default class MobXTestComponent extends React.Component<any, any>
                 <br />
                 <input value={ this.testStore.text } onChange={ this.TextInput_Change.bind(this) } />
                 <button onClick={ this.SaveButton_Click.bind(this) }>Save</button>
-                <a href="asdf">asdf</a>
             </div>
         );
     }

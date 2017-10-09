@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack && google-chrome ./dist/index.html",
+    "serve": "webpack-dev-server --open",
     "mockserver": "json-server --watch mocks/db.json --port 4444 --delay 200"
   },
   "keywords": [],
@@ -16,7 +17,8 @@
     "json-server": "^0.12.0",
     "ts-loader": "^2.3.7",
     "typescript": "^2.5.3",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
   },
   "dependencies": {
     "axios": "^0.16.2",

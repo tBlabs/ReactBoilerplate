@@ -1,12 +1,11 @@
-import { LazyInject }  from 'IoC';
 import { injectable, inject } from "inversify";
-import { Http } from 'Http';
 import { observable, reaction } from 'mobx';
-import { IHttp } from "IHttp";
 import { TYPES } from "TYPES";
+import { ITestStore } from 'ITestStore';
+import { IHttp } from "IHttp";
 
 @injectable()
-export class TestStore
+export class TestStore implements ITestStore
 {
     @observable
     public text: string = "initial";

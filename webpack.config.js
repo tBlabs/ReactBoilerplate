@@ -2,10 +2,14 @@ const path = require('path');
 
 module.exports = 
 {
-  entry: './src/index.tsx',
+  entry: 
+  {
+    src: './src/index.tsx',
+    react: ['react', 'react-dom'] 
+  },
   output: 
   {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: 
@@ -27,9 +31,15 @@ module.exports =
       path.resolve(__dirname, './src/components')
     ]
   },
-  externals: 
+  // externals: 
+  // {
+  //     "react": "React",
+  //     "react-dom": "ReactDOM"
+  // },
+  devServer:
   {
-      "react": "React",
-      "react-dom": "ReactDOM"
+     contentBase: [ 
+       path.join(__dirname, "dist")
+     ]
   }
 };

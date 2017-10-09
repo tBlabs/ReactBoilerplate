@@ -3,9 +3,10 @@ import getDecorators from "inversify-inject-decorators";
 import "reflect-metadata";  
 import { TYPES } from "TYPES";
 
-import { TestStore, ITestStore } from "TestStore";
+import { TestStore } from "TestStore";
 import { Http } from "Http";
 import { IHttp } from "IHttp";
+import { ITestStore } from "ITestStore";
 
 
 const container = new Container();
