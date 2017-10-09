@@ -21,12 +21,12 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
 
         this.state = { foo: false };
 
-        this.Button2ClickHandler = this.Button2ClickHandler.bind(this);
+        this.Button_Click = this.Button_Click.bind(this); 
     }
 
-    private Button2ClickHandler(event /*: React.MouseEvent<HtmlButtonElement>*/): void // TODO: add type; Event, MouseEvent, React.MouseEvent<HTMLButtonElement> - NOTHING OF THIS SEEMS TO WORK!!!!
+    private Button_Click(event /*: React.MouseEvent<HtmlButtonElement>*/): void // TODO: add type; Event, MouseEvent, React.MouseEvent<HTMLButtonElement> - NOTHING OF THIS SEEMS TO WORK!!!!
     {
-        console.log("Button2ClickHandler event: ", event);
+        console.log("Button_Click event: ", event);
 
         let e: MouseEvent = event as MouseEvent;
 
@@ -38,7 +38,7 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
         this.setState({ foo: !this.state.foo });
     }
 
-    HandleInputChange(event) // TODO: add type
+    Input_Change(event) // TODO: add type
     {
         console.log(event);
         console.log(event.target.value);
@@ -56,9 +56,9 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
                 <br />
                 <button onClick={ ()=> this.setState({ foo: !this.state.foo }) }>Toggle state.foo</button>
                 <br />
-                <button onClick={ this.Button2ClickHandler }>Toggle state.foo</button>
+                <button onClick={ this.Button_Click }>Toggle state.foo</button>
                 <br /> 
-                <input onChange={ this.HandleInputChange } />
+                <input onChange={ this.Input_Change } />
             </div>
         );
     }

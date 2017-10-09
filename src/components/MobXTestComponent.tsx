@@ -8,7 +8,7 @@ import { TYPES } from "TYPES";
 import { ITestStore } from "ITestStore";
 
 @observer
-export default class MobXTestComponent extends React.Component<any, any>
+export default class MobXTestComponent extends React.Component<{}, {}>
 {
     @LazyInject(TYPES.ITestStore)
     private testStore: ITestStore;

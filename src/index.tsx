@@ -18,8 +18,8 @@ console.log('Start');
 
 ReactDOM.render(
     <div>
-    <MobXTestComponent />
-    <MobXTestComponent />
+    <MobXTestComponent/>
+    <MobXTestComponent/>
     </div>,
     document.getElementById('root')
 );

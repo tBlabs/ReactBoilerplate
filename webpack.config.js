@@ -31,6 +31,7 @@ module.exports =
       path.resolve(__dirname, './src/components')
     ]
   },
+  // /* Use this to link something directly with <script src...> and remove it from bundle */
   // externals: 
   // {
   //     "react": "React",
