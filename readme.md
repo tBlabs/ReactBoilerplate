@@ -1,12 +1,12 @@
 # Build with
 - React 16
 - Typescript 2+
-- Webpack 3+ for bundling
+- Webpack 3+ for bundling (separate `src` and `react` bundle)
 - paths resolving (in webpack and typescript)
 - MobX
-- Dependency injection (inversify): property injection for Stores in React components
-- axios for http
-- json-server for tests
+- Dependency injection (with `inversify`): property injection for Stores in React components
+- `axios` for http
+- `json-server` for tests
 
 # Problems
 - types for events are not working, but definitions seems to be fine
