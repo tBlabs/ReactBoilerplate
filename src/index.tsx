@@ -1,25 +1,22 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import axios, { AxiosResponse } from "axios";
-import FooComponent from 'components/FooComponent';
+import FooComponent from 'components/foo/FooComponent';
 import { Foo } from "FooClass";
 import MobXTestComponent from "components/MobXTestComponent";
-import { useStrict } from "mobx";
+import * as MobX from "mobx";
+import { StyledComponent } from "components/StyledComponent/StyledComponent";
 
-useStrict(true);
+MobX.useStrict(true);
 
 console.log('Start');
 
-// let foo = new Foo("bar");
-
-
-// console.log(foo.toString());
-    // <FooComponent foo="foo from props" />
 
 ReactDOM.render(
     <div>
-    <MobXTestComponent/>
-    <MobXTestComponent/>
+        <StyledComponent/>
+        <MobXTestComponent/>
+        <MobXTestComponent/>
     </div>,
     document.getElementById('root')
 );

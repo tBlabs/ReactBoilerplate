@@ -1,46 +1,57 @@
-const path = require('path');
+module.exports =
+  {
+    entry:
+    {
+      src: './src/index.tsx',
+      react: [ 'react', 'react-dom' ]
+    },
 
-module.exports = 
-{
-  entry: 
-  {
-    src: './src/index.tsx',
-    react: ['react', 'react-dom'] 
-  },
-  output: 
-  {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
-  module: 
-  {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      }
-    ]
-  },
-  resolve: 
-  {
-    extensions: [ ".tsx", ".ts", ".js" ],
-    modules: [
-      path.resolve(__dirname, './node_modules'),
-      path.resolve(__dirname, './src'),
-      path.resolve(__dirname, './src/components')
-    ]
-  },
-  // /* Use this to link something directly with <script src...> and remove it from bundle */
-  // externals: 
-  // {
-  //     "react": "React",
-  //     "react-dom": "ReactDOM"
-  // },
-  devServer:
-  {
-     contentBase: [ 
-       path.join(__dirname, "dist")
-     ]
-  }
-};
+    output:
+    {
+      filename: '[name].bundle.js',
+      path: __dirname + '/dist'
+    },
+
+    module:
+    {
+      rules:
+      [
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/
+        },
+
+        {
+          test: /\.css$/,
+          include: __dirname + '/src/components',
+          use: [
+            'style-loader',
+            {
+              loader: 'typings-for-css-modules-loader',
+              options: {
+                modules: true,
+                namedExport: true,
+                localIdentName: '[name]__[local]__[hash:base64:8]'
+              }
+            }
+          ]
+        }
+
+      ]
+    },
+
+    resolve:
+    {
+      extensions: [ ".tsx", ".ts", ".js" ],
+      modules: [
+        __dirname + '/node_modules',
+        __dirname + '/src'
+      ]
+    },
+
+    devServer:
+    {
+      contentBase: __dirname + "/dist"
+    }
+  };
