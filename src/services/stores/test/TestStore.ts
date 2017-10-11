@@ -1,8 +1,8 @@
+import { ITestStore } from './ITestStore';
 import { injectable, inject } from "inversify";
 import { observable, reaction } from 'mobx';
-import { TYPES } from "TYPES";
-import { ITestStore } from 'ITestStore';
-import { IHttp } from "IHttp";
+import { IHttp } from "services/http/IHttp";
+import { TYPES } from "IoC/TYPES";
 
 @injectable()
 export class TestStore implements ITestStore

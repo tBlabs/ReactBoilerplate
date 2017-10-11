@@ -2,10 +2,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react';
-import { LazyInject } from "IoC";
-import { TestStore } from "TestStore";
-import { TYPES } from "TYPES";
-import { ITestStore } from "ITestStore";
+import { LazyInject } from "IoC/IoC";
+import { TYPES } from "IoC/TYPES";
+import { ITestStore } from "services/stores/test/ITestStore";
 
 @observer
 export default class MobXTestComponent extends React.Component<{}, {}>

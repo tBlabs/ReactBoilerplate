@@ -27383,9 +27383,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var inversify_1 = __webpack_require__(40);
 var inversify_inject_decorators_1 = __webpack_require__(86);
 __webpack_require__(88);
-var TYPES_1 = __webpack_require__(43);
 var TestStore_1 = __webpack_require__(89);
 var Http_1 = __webpack_require__(90);
+var TYPES_1 = __webpack_require__(43);
 var container = new inversify_1.Container();
 exports.container = container;
 container.bind(TYPES_1.TYPES.ITestStore).to(TestStore_1.TestStore).inSingletonScope();
@@ -31049,10 +31049,7 @@ var StyledComponent = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     StyledComponent.prototype.render = function () {
-        console.log("styles:", styles);
-        return (React.createElement("p", { className: styles.foo },
-            "Styled Component: ",
-            styles.foo));
+        return (React.createElement("p", { className: styles.foo }, "Styled Component test"));
     };
     return StyledComponent;
 }(React.Component));
@@ -31099,11 +31096,11 @@ exports = module.exports = __webpack_require__(113)(undefined);
 
 
 // module
-exports.push([module.i, ".styles__foo__3RW7Lafn\n{\n    font-weight: bold;\n    border: 3px solid blue;\n}", ""]);
+exports.push([module.i, ".foo__3-5u0CUl\n{\n    font-weight: bold;\n    border: 3px solid blue;\n}", ""]);
 
 // exports
 exports.locals = {
-	"foo": "styles__foo__3RW7Lafn"
+	"foo": "foo__3-5u0CUl"
 };
 
 /***/ }),

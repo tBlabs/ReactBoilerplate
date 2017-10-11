@@ -8,9 +8,8 @@ export class StyledComponent extends React.Component<{}, {}>
 {
     render()
     {
-        console.log("styles:", styles);
         return (
-            <p className={ styles.foo }>Styled Component: {styles.foo}</p>
+            <p className={ styles.foo }>Styled Component test</p>
         );
     }
 }

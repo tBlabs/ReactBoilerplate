@@ -32,7 +32,7 @@ module.exports =
               options: {
                 modules: true,
                 namedExport: true,
-                localIdentName: '[name]__[local]__[hash:base64:8]'
+                localIdentName: '[local]__[hash:base64:8]'
               }
             }
           ]
@@ -45,6 +45,7 @@ module.exports =
     {
       extensions: [ ".tsx", ".ts", ".js" ],
       modules: [
+        '**/*',
         __dirname + '/node_modules',
         __dirname + '/src'
       ]

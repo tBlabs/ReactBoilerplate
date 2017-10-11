@@ -1,7 +1,7 @@
+import { IHttp } from './IHttp';
 import { injectable } from 'inversify';
 import { AxiosResponse } from 'axios';
 import axios from 'axios';
-import { IHttp } from "IHttp";
 
 @injectable()
 export class Http implements IHttp

@@ -1,12 +1,11 @@
 import { Container } from "inversify";
 import getDecorators from "inversify-inject-decorators";
 import "reflect-metadata";  
-import { TYPES } from "TYPES";
-
-import { TestStore } from "TestStore";
-import { Http } from "Http";
-import { IHttp } from "IHttp";
-import { ITestStore } from "ITestStore";
+import { TestStore } from "services/stores/test/TestStore";
+import { ITestStore } from "services/stores/test/ITestStore";
+import { IHttp } from "services/http/IHttp";
+import { Http } from "services/http/Http";
+import { TYPES } from "IoC/TYPES";
 
 
 const container = new Container();

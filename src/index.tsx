@@ -2,10 +2,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import axios, { AxiosResponse } from "axios";
 import FooComponent from 'components/foo/FooComponent';
-import { Foo } from "FooClass";
-import MobXTestComponent from "components/MobXTestComponent";
+import MobXTestComponent from "components/mobx/MobXTestComponent";
 import * as MobX from "mobx";
-import { StyledComponent } from "components/StyledComponent/StyledComponent";
+import { StyledComponent } from "components/styled/StyledComponent";
 
 MobX.useStrict(true);
 
