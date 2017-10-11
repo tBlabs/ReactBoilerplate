@@ -8,14 +8,14 @@ import { StyledComponent } from "components/styled/StyledComponent";
 
 MobX.useStrict(true);
 
-console.log('Start');
+console.log(`Start in ${ process.env.NODE_ENV === 'production' ? 'production' : 'development' } mode`);
 
 
 ReactDOM.render(
     <div>
-        <StyledComponent/>
-        <MobXTestComponent/>
-        <MobXTestComponent/>
+        <StyledComponent />
+        <MobXTestComponent />
+        <MobXTestComponent />
     </div>,
     document.getElementById('root')
 );
