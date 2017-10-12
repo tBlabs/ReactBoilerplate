@@ -2,7 +2,7 @@
   "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.tsx",
   "scripts": {
     "start": "webpack --config webpack.dev.js && x-www-browser ./dist/index.html",
     "serve": "webpack-dev-server --config webpack.dev.js --open",

@@ -15,7 +15,8 @@ ReactDOM.render(
     <div>
         <StyledComponent />
         <MobXTestComponent />
-        <MobXTestComponent />
+        <FooComponent foo="foo" bar={4} />
+        <MobXTestComponent />       
     </div>,
     document.getElementById('root')
 );

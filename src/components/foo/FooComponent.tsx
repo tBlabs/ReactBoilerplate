@@ -20,25 +20,16 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
         super(props);
 
         this.state = { foo: false };
-
-        this.Button_Click = this.Button_Click.bind(this); 
     }
 
-    private Button_Click(event /*: React.MouseEvent<HtmlButtonElement>*/): void // TODO: add type; Event, MouseEvent, React.MouseEvent<HTMLButtonElement> - NOTHING OF THIS SEEMS TO WORK!!!!
+    private Button_Click(event: MouseEvent): void // TODO: add type; Event, MouseEvent, React.MouseEvent<HTMLButtonElement> - NOTHING OF THIS SEEMS TO WORK!!!!
     {
         console.log("Button_Click event: ", event);
-
-        let e: MouseEvent = event as MouseEvent;
-
-        if (e)
-        {
-            console.log("as MouseEvent: ", e);       
-        }
 
         this.setState({ foo: !this.state.foo });
     }
 
-    Input_Change(event) // TODO: add type
+    private Input_Change(event): void // TODO: add type
     {
         console.log(event);
         console.log(event.target.value);
@@ -46,8 +37,16 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
 
     render(): React.ReactElement<{}>
     {
+        const divStyle = 
+        {
+            margin: "5px",
+            borderColor: "red",
+            borderWitdh: 3,
+            borderStyle: "dotted"
+        }
+
         return (
-            <div>
+            <div style={divStyle}>
                 props.foo: { this.props.foo }
                 <br />
                 props.bar: { this.props.bar ? this.props.bar : "null" }
@@ -56,7 +55,7 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
                 <br />
                 <button onClick={ ()=> this.setState({ foo: !this.state.foo }) }>Toggle state.foo</button>
                 <br />
-                <button onClick={ this.Button_Click }>Toggle state.foo</button>
+                <button onClick={ this.Button_Click.bind(this) }>Toggle state.foo</button>
                 <br /> 
                 <input onChange={ this.Input_Change } />
             </div>
