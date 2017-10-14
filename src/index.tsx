@@ -5,18 +5,21 @@ import FooComponent from 'components/foo/FooComponent';
 import MobXTestComponent from "components/mobx/MobXTestComponent";
 import * as MobX from "mobx";
 import { StyledComponent } from "components/styled/StyledComponent";
+import Button from 'material-ui/Button';
+import Snackbar from 'material-ui/Snackbar';
+import AppComponent from "components/app/AppComponent";
 
 MobX.useStrict(true);
 
 console.log(`Start in ${ process.env.NODE_ENV === 'production' ? 'production' : 'development' } mode`);
 
-
 ReactDOM.render(
-    <div>
+    <AppComponent>
         <StyledComponent />
         <MobXTestComponent />
         <FooComponent foo="foo" bar={4} />
-        <MobXTestComponent />       
-    </div>,
+        <MobXTestComponent />   
+        <Button>adsf</Button>  
+    </AppComponent>,
     document.getElementById('root')
 );

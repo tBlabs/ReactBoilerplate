@@ -3,7 +3,7 @@ module.exports =
         entry:
         {
             src: './src/index.tsx',
-            react: [ 'react', 'react-dom' ]
+         //   lib: [ 'react', 'react-dom', 'mobx', 'mobx-react', 'inversify', 'axios' ]
         },
 
         output:
