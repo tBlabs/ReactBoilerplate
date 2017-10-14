@@ -1,3 +1,5 @@
+This project is a base for my future **Single Page Apps** based on React.
+
 # Build with
 - npm 5.4 & node 8.4
 - React 16
@@ -11,8 +13,17 @@
 - `css modules` for styling
 - SVG icons from `material-ui-icons`
 
+# Scripts
+- Production build: `npm run build` (uses `webpack.common.js` and `webpack.prod.js`)
+- Constant development: `npm run serve` (uses `webpack.common.js` and `webpack.config.js` /because webpack-dev-server can not start with file other than this/)
+- Single development build: `npm run start`
+- Pseudo-backend (simple REST server): `npm run mockserver`
+
+# To do
+- Improve build process: add minification and uglification
+- Split bundle in src and lib (there is a problem with it for now)
+
 # Problems
-- types for events are not working, but definitions seems to be fine
 - why TYPES can not be exported from IoC.ts ?!?!? their must be in separete file..
 - src bundle is big (over 1MB/500kB in dev/prod mode), why?
 - in 'dev server mode' there are some TS errors after first code update (not right after server start), they do not appear in 'tsc' or manual webpack run (only in 'dev server mode')

@@ -4,14 +4,14 @@
   "description": "",
   "main": "./src/index.tsx",
   "scripts": {
-    "start": "webpack --config webpack.dev.js && x-www-browser ./dist/index.html",
-    "serve": "webpack-dev-server --config webpack.dev.js --open",
+    "start": "webpack && x-www-browser ./dist/index.html",
+    "serve": "webpack-dev-server --open",
     "build": "webpack --config webpack.prod.js",
     "mockserver": "json-server --watch mocks/db.json --port 4444 --delay 200"
   },
   "keywords": [],
   "author": "tB",
-  "license": "ISC",
+  "license": "beerware",
   "devDependencies": {
     "@types/material-ui": "^0.18.3",
     "@types/node": "^8.0.34",

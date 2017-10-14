@@ -19,19 +19,18 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
     {
         super(props);
 
-        this.state = { foo: false };
+        this.state = { foo: true };
     }
 
-    private Button_Click(event: MouseEvent): void // TODO: add type; Event, MouseEvent, React.MouseEvent<HTMLButtonElement> - NOTHING OF THIS SEEMS TO WORK!!!!
+    private Button_Click(event: MouseEvent): void 
     {
-        console.log("Button_Click event: ", event);
+        console.log("Bujjkktton_Click event: ", event);
 
         this.setState({ foo: !this.state.foo });
     }
 
     private Input_Change(event): void // TODO: add type
     {
-        console.log(event);
         console.log(event.target.value);
     }
 
