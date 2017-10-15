@@ -1,9 +1,11 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports =
     {
         entry:
         {
             src: './src/index.tsx',
-         //   lib: [ 'react', 'react-dom', 'mobx', 'mobx-react', 'inversify', 'axios' ]
+            //   lib: [ 'react', 'react-dom', 'mobx', 'mobx-react', 'inversify', 'axios' ]
         },
 
         output:
@@ -50,5 +52,14 @@ module.exports =
                 __dirname + '/src'
             ]
         },
+
+        plugins:
+        [
+            new HtmlWebpackPlugin(
+                {
+                    title: "App",
+                    template: "./src/index.template.ejs"
+                })
+        ]
 
     };

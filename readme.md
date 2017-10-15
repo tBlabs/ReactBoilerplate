@@ -4,14 +4,15 @@ This project is a base for my future **Single Page Apps** based on React.
 - npm 5.4 & node 8.4
 - React 16
 - Typescript 2+
-- Webpack 3+ for bundling (separate `src` and `react` bundle)
-- MobX
+- Webpack 3+ 
+- MobX 
 - Dependency injection (with `inversify`): property injection for Stores in React components
 - Paths resolving (in webpack and typescript)
 - `axios` for http
 - `json-server` for tests
 - `css modules` for styling
 - SVG icons from `material-ui-icons`
+- index.html autobuilding thanks to `html-webpack-plugin`
 
 # Scripts
 - Production build: `npm run build` (uses `webpack.common.js` and `webpack.prod.js`)
@@ -22,6 +23,7 @@ This project is a base for my future **Single Page Apps** based on React.
 # To do
 - Improve build process: add minification and uglification
 - Split bundle in src and lib (there is a problem with it for now)
+- Add test framework
 
 # Problems
 - why TYPES can not be exported from IoC.ts ?!?!? their must be in separete file..
@@ -31,3 +33,8 @@ This project is a base for my future **Single Page Apps** based on React.
 # Things I don't like
 - adding styles for component requires project rebuild (to build d.ts files), maybe there is an VSC extension for that?
 - name TYPES for interfaces symbols. I need a better one
+
+# Tools
+- `Jest` from Visual Studio Code extensions
+- `ncu` to update all npm packages at once
+Use `npm ls -g --depth 0` to check list of all globally installed tools.
