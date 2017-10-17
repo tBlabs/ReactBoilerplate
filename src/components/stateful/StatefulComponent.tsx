@@ -1,21 +1,21 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-interface IFooComponentProps
+interface IStatefulComponentProps
 {
     foo: string;
     bar?: number;
 }
 
-interface IFooComponentState
+interface IStatefulComponentState
 {
     foo: boolean;
 }
 
 
-export default class FooComponent extends React.Component<IFooComponentProps, IFooComponentState>
+export default class StatefulComponent extends React.Component<IStatefulComponentProps, IStatefulComponentState>
 {
-    constructor(props: IFooComponentProps)
+    constructor(props: IStatefulComponentProps)
     {
         super(props);
 
@@ -24,7 +24,7 @@ export default class FooComponent extends React.Component<IFooComponentProps, IF
 
     private Button_Click(event: MouseEvent): void 
     {
-        console.log("Bujjkktton_Click event: ", event);
+        console.log("Button_Click event: ", event);
 
         this.setState({ foo: !this.state.foo });
     }
